@@ -9,28 +9,16 @@ int main()
     int n;
     cin>>n;
     int a[n];
-    int sum=0;
+    vector<int >va,vb;
     for (int i = 0; i < n; i++)
     {
        cin>>a[i];
+       if(a[i]%2==0)va.push_back(a[i]);
+       else vb.push_back(a[i]);
       
     }
-    bool c=false;
-    while (1)
-    {
-      int d=0;
-    for (int i = 0; i < n-1; i++)
-    {
-
-      if(a[i]>a[i+1]){
-        if((a[i]+a[i+1])%2==0){c=true;break;}
-        swap(a[i],a[i+1]);
-        d=1;
-    }
-    }
-    if(d==0)break;
-    }
-    if(!c)cout<<"YES"<<endl;
+ 
+    if(is_sorted(va.begin(),va.end())&&is_sorted(vb.begin(),vb.end()))cout<<"YES"<<endl;
     else cout<<"NO"<<endl;
     
   }
