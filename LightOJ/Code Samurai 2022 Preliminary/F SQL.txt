@@ -1,0 +1,4 @@
+select item,DATE(date, 'start of month', '+1 month', '-1 day'),sum(count) count from product
+group by 
+    STRFTIME("%m-%Y",date),item
+order by item
